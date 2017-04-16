@@ -1,0 +1,141 @@
+/*----Estilos generales----*/
+body{
+	font-family: "Angsana New";
+	font-size: 14pt;
+	margin:0;
+}
+
+/*Quita vinietas de todos los niveles*/
+
+/*Quitamos las vinietas de los ul*/
+header{
+	width: 100%;
+}
+nav ul {
+	list-style: none;
+	padding: 0;/*Quitamos la sangria*/
+	width: 100%;
+
+}
+
+nav li{
+	line-height: 3rem;
+	position: relative;
+	flex-grow: 1;
+	text-align: center;
+}
+
+nav li ul{
+	position: absolute;
+}
+nav a {
+	color: #ddd;
+	display: block;
+	padding: .5px 10px;
+	text-decoration: none;
+	transition: .2s;
+}
+
+nav a:hover{
+	background: #f0b429;
+	color: #000;
+}
+
+nav > ul {
+	background: #005883;
+	display: flex;
+	justify-content: center;
+
+}
+nav > ul >li {
+	float: left;
+}
+
+/*Estilos menu primer nivel*/
+
+nav li li{
+	background: #005883;
+	max-height: 0;
+	transition: all .2s;
+	overflow: hidden;
+	width: 100%;
+}
+
+nav li:hover li{
+	max-height: 500px;
+	overflow: visible;
+}
+
+
+
+nav > ul > li > ul{
+	top:100%;
+}
+/*Estilos menu dispositivos moviles*/
+#btn-menu{
+	display: none;
+}
+header label{
+	display: none;
+	width: 30px;
+	height: 30px;
+	padding: 10px;
+	border-right: 1px solid #fff;
+}
+header label:hover{
+	cursor: pointer;
+	background: rgba(0,0,0,0.5);
+}
+
+@media (max-width: 768px){
+	header img{
+		width: 100%;
+	}
+
+	header label {
+		display: block;
+	}
+
+	nav{
+		position: absolute;
+		background-color:  #ddd;
+		width: 100%;
+		transform: translateX(-100%);
+		transition: all 0.35s;
+	}
+
+	nav ul {
+		flex-direction: column;
+	}
+
+	#btn-menu:checked ~ nav{
+		margin:0;
+		transform: translateX(0%);
+	}
+
+	nav ul li:hover ul{
+	display: none;
+	position: static;
+	}
+
+
+}
+
+
+/*conteido de la pagina inicio*/
+section h1{
+	margin-left: 20px;
+}
+section h3{
+	margin-left: 50px;
+}
+
+section ul{
+	margin-left: 20px;
+}
+
+section p{
+	margin-left: 50px;
+	margin-right: 50px;
+	text-align: justify;
+}
